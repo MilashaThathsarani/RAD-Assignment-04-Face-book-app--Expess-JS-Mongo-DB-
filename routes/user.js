@@ -22,6 +22,14 @@ router.post('/',async (req,res) =>{
     }
 })
 
+router.get('/',async (req,res) =>{
+    try {
+        const users = await User.find()
+        res.send(users)
+    }catch (err) {
+        res.send('Err:'+ err)
+    }
+})
 
 
 module.exports = router
