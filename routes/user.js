@@ -15,7 +15,6 @@ router.post('/',async (req,res) =>{
 
     try {
         const response = await user.save()
-        //res.send(response)
         res.json(response)
     }catch (err) {
         res.send('Err:' + err)
@@ -36,7 +35,6 @@ router.get('/:id',async (req,res) =>{
         const user = await User.findById(req.params.id)
         res.json(user)
     }catch (err) {
-
     }
 })
 
@@ -68,5 +66,6 @@ router.put('/:id', async (req, res) => {
         res.send('Err: ' + err)
     }
 })
+
 
 module.exports = router
